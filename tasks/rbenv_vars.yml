@@ -1,0 +1,10 @@
+---
+ - name: Clone rbenv-vars repository
+   git:
+     repo: https://github.com/rbenv/rbenv-vars.git
+     dest: "~/.rbenv/plugins/rbenv-vars"
+
+ - name: Copy vars file
+   copy:
+     src: .rbenv-vars
+     dest: ~/

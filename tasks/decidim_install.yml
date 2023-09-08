@@ -7,6 +7,12 @@
    state: present
   become: yes
 
+- name: Source .bashrc
+  shell: source ~/.bashrc
+  args:
+    executable: /bin/bash
+
+
 - name: Install Decidim gem
   gem:
     name: decidim

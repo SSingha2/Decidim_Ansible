@@ -3,7 +3,8 @@
 - name: Update APT package cache
   apt:
     update_cache: yes
-  become: yes    
+  become: yes
+
 
 - name: Install required packages
   apt:
@@ -50,4 +51,9 @@
 
 - name: Set global Ruby version to 3.0.2
   command: rbenv global 3.0.2
+  
+- name: Add Gem Path
+  lineinfile:
+    path: ~/.bashrc
+    line: 'export GEM_PATH=/home/vagrant/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems'
 
