@@ -2,9 +2,16 @@
 - hosts: 192.168.10.15
 #  become: yes
   tasks:
- # - include_tasks: rbenv_install.yml
- # - include_tasks: postgresql.yml
- # - include_tasks: nodejs_install.yml
- # - include_tasks: decidim_install.yml
+<<<<<<< HEAD
+  - include_tasks: rbenv_install.yml
+  - include_tasks: postgresql.yml
+  - include_tasks: nodejs_install.yml
+  - include_tasks: decidim_install.yml
+=======
+  - include_tasks: rbenv_install.yml
+  - include_tasks: postgresql.yml
+  - include_tasks: nodejs_install.yml
+  - include_tasks: decidim_install.yml
+>>>>>>> 68364d9fdacaed917057d89c33b8ce10061665b9
   - include_tasks: decidim_app.yml
   - include_tasks: rbenv_vars.yml
