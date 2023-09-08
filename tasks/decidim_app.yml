@@ -1,0 +1,3 @@
+---
+- name: Create the Decidim App
+  command: decidim decidim_application

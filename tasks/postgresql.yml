@@ -1,0 +1,20 @@
+---
+- name: Install PostgreSQL and libpq-dev
+  apt:
+   name:
+     - postgresql
+     - libpq-dev
+     - python3
+     - pip
+  become: yes
+
+- name: Install Python packages
+  pip: "name={{ item }}  state=present"
+  with_items:
+     - psycopg2
+
+- name: Create PostgreSQL User
+  become: yes
+  become_user: postgres
+  shell: |
+    psql -c "CREATE USER decidim_app WITH SUPERUSER CREATEDB NOCREATEROLE PASSWORD 'thepassword'"

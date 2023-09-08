@@ -1,0 +1,13 @@
+---
+- name: Install libicu-dev and ImageMagick
+  apt:
+   name:
+    - libicu-dev
+    - imagemagick
+   state: present
+  become: yes
+
+- name: Install Decidim gem
+  gem:
+    name: decidim
+
